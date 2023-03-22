@@ -13,7 +13,9 @@ console.log( DrEvil( 1000000 ) );
 
 // MixUp
 const mixUp = function ( string1, string2 ) {
-    return `${ string2 } ${ string1 }`;             // swap sling order
+    const newString1 = string2.slice( 0, 2 ) + string1.slice( 2 );
+    const newString2 = string1.slice( 0, 2 ) + string2.slice( 2 );
+    return `${ newString1 } ${ newString2 }`;
 }
 console.log( "> mixUp function" );
 console.log( mixUp( 'mix', 'pod' ) );
@@ -36,15 +38,13 @@ console.log( fixStart( 'babble' ) );
 
 // Verbing
 const verbing = function( verb ) {
-    if ( verb.length < 3 ) {                        // check if length is less than 3
+    if ( verb.length < 3 ) {                                    // check if length is less than 3
         return verb;
+    } else if ( verb.endsWith( "ing" )) {                       // check if string end with "ing"
+        return `${ verb }ly`;                                   // add "ly" to the end
     } else {
-        if ( verb.endsWith( "ing" )) {              // check if string end with "ing"
-            return `${ verb }ly`;                     // add "ly" to the end
-        } else {
-            const ingVerb = `${ verb + verb.slice( -1 ) }ing`; // add additional last character and "ing" to the end
-            return ingVerb;       
-        }
+        const ingVerb = `${ verb + verb.slice( -1 ) }ing`;      // add additional last character and "ing" to the end
+        return ingVerb;       
     }
 }
 console.log( "> verbing function" );
@@ -54,19 +54,16 @@ console.log( verbing('go') );
 
 // Not Bad
 const notBad = function( sentence ) {
-    if ( sentence.includes( "not" ) && sentence.includes( "bad" ) === true ) {          // if both "not" and "bad" exist
-        if ( sentence.indexOf( "not" ) < sentence.indexOf( "bad" )) {                   // if the sequence is right
-            const notPosition = sentence.indexOf( "not" );                              // look for "not" position
-            const badPosition = sentence.indexOf( "bad" );                              // look for "bad" position
-            const newSentence = `${ sentence.slice( 0, notPosition) }good${ sentence.slice( badPosition + 3 ) }`;     // replace "not... bad" with good
-            return newSentence;
-        } else {
-            return sentence;
-        }
+    if ( sentence.includes( "not" ) && sentence.includes( "bad" ) && sentence.indexOf( "not" ) < sentence.indexOf( "bad" ) ) {             // if the sequence is right
+        const notPosition = sentence.indexOf( "not" );                                                                                              // for "not" position
+        const badPosition = sentence.indexOf( "bad" );                                                                                              // look for "bad" position
+        const newSentence = `${ sentence.slice( 0, notPosition ) }good${ sentence.slice( badPosition + 3 ) }`;                                       // replace "not... bad" with good
+        return newSentence;
     } else {
         return sentence;
     }
 }
+
 console.log( "> notBad function" );
 console.log( notBad( 'This dinner is not that bad!' ) );
 console.log( notBad( 'This movie is not so bad!' ) );
