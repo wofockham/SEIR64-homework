@@ -10,12 +10,10 @@ const DrEvil = function (dollar) {
 };
 
 const mixUp = function (mix, up) {
-    // const opposite = up + " " + mix;
-    // return opposite;
-    const re = /(\w+)\s(\w+)/;
-    const str = mix + ' ' + up;
-    const newstr = str.replace(re, "$2 $1");
-    return newstr;
+    const mixL = mix[mix.length - 1];
+    const upL = up[up.length - 1];
+    const opposite = (up.replace(upL, mixL) + " " + mix.replace(mixL, upL));
+    return opposite;
 };
 
 const fixStart = function(str) {
@@ -47,7 +45,7 @@ const notBad = function (arg) {
         const not = arg.indexOf('not');
         const bad = arg.indexOf('bad') + 3;
         const subString = arg.substring(not, bad);
-        const argNNotBad = arg.replace(subString, 'good!');
+        const argNNotBad = arg.replace(subString, 'good');
         const good = argNNotBad;
         return good;
     }
