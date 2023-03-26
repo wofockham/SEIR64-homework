@@ -1,33 +1,4 @@
-// const currLineArrayPrompt = prompt("Which line are you currently on?", "lineN / lineL / line6")
-// const currStop = prompt("Which station are you at on that line?", "TimesSquare / UnionSqure / AstorSquare / etc")
-// const destLineArrayPrompt = prompt("Which line would you like to go to?", "lineN / lineL / line6")
-// const destStop = prompt("Which stop?", "TimesSquare / UnionSqure / AstorSquare / etc")
-
-// const currPromptConverter = function(currLineArray){
-//     if (currLineArray === "lineN"){
-//         console.log("LineN")
-//         return lineN
-//     }   if (currLineArray === "lineL"){
-//         console.log("LineL")
-//         return lineL
-//     }   if (currLineArray === "line6"){
-//         console.log("Line6")
-//         return Line6
-//     }
-// }
-// const destPromptConverter = function(destLineArray){
-//     if (destLineArray === "lineN"){
-//         console.log("LineN")
-//         return lineN
-//     }   if (destLineArray === "lineL"){
-//         console.log("LineL")
-//         return lineL
-//     }   if (destLineArray === "line6"){
-//         console.log("Line6")
-//         return Line6
-//     }
-// }
-
+////////////////////////// Line Arrays
 const lineN = [
     {name: "TimesSquare", line: "n"},
     {name: "34th", line: "n"},
@@ -43,7 +14,7 @@ const lineL = [
     {name: "3rd", line: "l"},
     {name: "1st", line: "l"},
 ]
-const Line6 = [
+const line6 = [
     {name: "GrandCentral", line: "6"},
     {name: "33rd", line: "6"},
     {name: "28th", line: "6"}, 
@@ -52,22 +23,49 @@ const Line6 = [
     {name: "AstorPlace", line: "6"},
 ]
 
-const findStopIndex = function(currLineArray, stopName){
-    const stopIndex = currLineArray.findIndex(obj => {
+const currLineArrayPrompt = prompt("Which line are you currently on?", "lineN / lineL / line6")
+const currStop = prompt("Which station are you at on that line?", "TimesSquare / UnionSqure / AstorPlace / etc")
+const destLineArrayPrompt = prompt("Which line would you like to go to?", "lineN / lineL / line6")
+const destStop = prompt("Which stop?", "TimesSquare / UnionSqure / AstorPlace / etc")
+
+const currPromptConverter = function(currLineArrayPrompt){
+    if (currLineArrayPrompt === "lineN"){
+        return lineN
+    }   if (currLineArrayPrompt === "lineL"){
+        return lineL
+    }   if (currLineArrayPrompt === "line6"){
+        return line6
+    }
+}
+
+const destPromptConverter = function(destLineArrayPrompt){
+    if (destLineArrayPrompt === "lineN"){
+        return lineN
+    }   if (destLineArrayPrompt === "lineL"){
+        return lineL
+    }   if (destLineArrayPrompt === "line6"){
+        return line6
+    }
+}
+
+currPromptConverter(currLineArrayPrompt);
+destPromptConverter(destLineArrayPrompt);
+
+
+////////////////////////////////// functions
+
+const findStopIndex = function(currLineArray, stopName){   //Finds index based on stop name (string)
+    let stopIndex = currLineArray.findIndex(obj => {
         return obj.name === stopName;
     });
     return stopIndex
 }
 
-const tripSelector = function(currLineArray, currStop, destLineArray, destStop){
-    if (currLineArray = destLineArray){
+const tripSelector = function(currLineArray, currStop, destLineArray, destStop){        /// choses complex vs simple function
+    if (currLineArray === destLineArray){
         simpleTrip(currLineArray, currStop, destStop)
-        console.log("Simple Trip")
-        console.log(currLineArray)
-        console.log(destLineArray)
     } else {
         complexTrip(currLineArray, currStop, destLineArray, destStop)
-        console.log("Complex Stop")
     }
 }
 
@@ -76,9 +74,7 @@ const tripSelector = function(currLineArray, currStop, destLineArray, destStop){
 const simpleTrip = function(currLineArray, currStop, destStop){
 let simpleTripLog = [];
     const currStopIndex = findStopIndex(currLineArray, currStop);
-        console.log(currStopIndex);
     const destStopIndex = findStopIndex(currLineArray, destStop);
-        console.log(destStopIndex);
     if (currStopIndex < destStopIndex){
         for (a = currStopIndex; a <= destStopIndex; a++){
             simpleTripLog.push(currLineArray[a]);
@@ -95,13 +91,9 @@ let simpleTripLog = [];
 const complexTrip = function(currLineArray, currStop, destLineArray, destStop){
 let complexTripLog = [];
     const currStopIndex = findStopIndex(currLineArray, currStop);
-        console.log(currStopIndex);
     const destStopIndex = findStopIndex(destLineArray, destStop);
-        console.log(destStopIndex);
     const currUnionSquareStopIndex = findStopIndex(currLineArray, "UnionSquare");
-        console.log(currUnionSquareStopIndex);
     const destUnionSquareStopIndex = findStopIndex(destLineArray, "UnionSquare");
-        console.log(destUnionSquareStopIndex);
         if (currStopIndex < currUnionSquareStopIndex){
             for (a = currStopIndex; a <= currUnionSquareStopIndex; a++){
                 complexTripLog.push(currLineArray[a])};  
@@ -120,4 +112,4 @@ let complexTripLog = [];
         console.table(complexTripLog)
 }
 
-// tripSelector(currPromptConverter(currLineArrayPrompt), currStop, destPromptConverter(destLineArrayPrompt), destStop);
+tripSelector(currPromptConverter(currLineArrayPrompt), currStop, destPromptConverter(destLineArrayPrompt), destStop);
