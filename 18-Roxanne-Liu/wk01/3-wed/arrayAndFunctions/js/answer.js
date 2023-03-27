@@ -35,23 +35,23 @@ console.log(vowel('t'));
 
 // Define a function sumArray and a function multiplyArray that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sumArray([1,2,3,4]) should return 10, and multiplyArray([1,2,3,4]) should return 24.
 const numberOfArray = [1, 5, 9, 24, 12, 8, 14];
-function sumArray() {
+function sumArray(array) {
     let sum = 0;
-    for (i = 0; i < numberOfArray.length; i++) {
-        sum += numberOfArray[i];
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
     }
     return sum;
 };
-console.log(sumArray());
+console.log(sumArray(numberOfArray));
 
-function multiplyArray() {
+function multiplyArray(array) {
     let multiply = 1;
-    for (j = 0; j < numberOfArray.length; j++) {
-        multiply *= numberOfArray[j];
+    for (j = 0; j < array.length; j++) {
+        multiply *= array[j];
     }
     return multiply;
 };   
-console.log(multiplyArray());
+console.log(multiplyArray(numberOfArray));
 
 // Bonus
 // Define a function reverseString that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
