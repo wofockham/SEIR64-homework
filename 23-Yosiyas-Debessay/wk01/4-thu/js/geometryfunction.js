@@ -132,3 +132,41 @@ const cartForParty = {
 }
 
 console.log(timeConverter("12:00:00pm"))
+
+
+const week = [
+    {
+    name: 'monday',
+    temp: 20,
+    rian: 12
+    },
+    {
+    name: 'tuesday',
+    temp: 20,
+    rian: 12
+    },
+    {
+    name: 'wednesday',
+    temp: 20,
+    rian: 12
+    },
+    {
+    name: 'thursday',
+    temp: 20,
+    rian: 12
+    },
+    {
+    name: 'friday',
+    temp: 20,
+    rian: 12
+    },
+]
+
+const planTrip = function (minTemp, maxRain) {
+    const days = [];
+
+    for (let i = 0; i < week.length; i++) {
+    const day = week[i];
+    console.log(day);
+    }
+}
