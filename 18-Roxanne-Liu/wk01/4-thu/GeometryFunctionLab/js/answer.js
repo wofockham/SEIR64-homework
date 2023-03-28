@@ -23,7 +23,7 @@ const rectangleA = {
     length: 4,
     width: 4
   };
-    
+  
 isSquare(rectangleA);
 calArea(rectangleA);
 Calperimeter(rectangleA);
@@ -48,18 +48,24 @@ function isIsosceles(isosceles) {
 };
 
 function area(triangle) {
-    let heightb = 2 * (triangle.sideA / triangle.sideB)
-    let realArea = (heightb * triangle.sideB) / 2
+    const s = (triangle.sideA + triangle.sideB + triangle.sideC) / 2;
+    const realArea = Math.sqrt(s * (s - triangle.sideA) * (s - triangle.sideB) * (s - triangle.sideC));
     console.log(`The area of the triangle is ${ realArea }.`)
 ;}
 
-function isObtuse(obtuse) {
-    if (obtuse.sideA ** 2 > (obtuse.sideB ** 2 + obtuse.sideC ** 2) ) {
-        console.log("It is obtuse.");
+  
+function isObtuse(triangle) {
+    const longestSide = Math.max(triangle.sideA, triangle.sideB, triangle.sideC);
+    if (longestSide === triangle.sideA && longestSide ** 2 > triangle.sideB ** 2 + triangle.sideC ** 2) {
+        console.log('It is an obtuse triangle.');
+    } else if (longestSide === triangle.sideB && longestSide ** 2 > triangle.sideA ** 2 + triangle.sideC ** 2) {
+        console.log('It is an obtuse triangle.');
+    } else if (longestSide === triangle.sideC && longestSide ** 2 > triangle.sideA ** 2 + triangle.sideB ** 2) {
+        console.log('It is an obtuse triangle.');
     } else {
-        console.log("It's not obtuse.");
+        console.log('It is not an obtuse triangle.');
     }
-};
+  }
 
 const triangleA = {
     sideA: 3,
