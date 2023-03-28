@@ -51,7 +51,7 @@ You need to do this every time you're submitting homework.
 - **Commit your work to your local repository progressively**
   - Make sure you are in the correct folder containing the homework you want to submit.
   - `git add .`
-  - `git commit -m "YOUR_COMMIT_MESSAGE_GOES_HERE"`(where `YOUR_COMMIT_MESSAGE_GOES_HERE` is your description of the work you are committing)
+  - `git commit -m “TASK_STATUS YOUR_COMMIT_MESSAGE_GOES_HERE”(where TASK_STATUS will be COMPLETE or INCOMPLETE. YOUR_COMMIT_MESSAGE_GOES_HERE is your description of the work you are committing)
 - **Push your changes to your forked repository**
   - `git pull upstream main` - merge changes that have been made to this repository into your own local repository (if a weird screen appears on this step, PLEASE SEE THE **IMPORTANT 2** NOTED BELOW).
   - `git push origin main`
