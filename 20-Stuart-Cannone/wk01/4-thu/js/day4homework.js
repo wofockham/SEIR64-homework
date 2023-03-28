@@ -105,7 +105,9 @@ triarea(tri2)
 function isObtuseTriangle(triangle) {
     
     // Check if the sum of any two sides is less than or equal to the third side
-    if (triangle.length + triangle.width <= triangle.height || triangle.length + triangle.height <= triangle.width || triangle.width + triangle.height <= triangle.length) {
+    if (triangle.length + triangle.width <= triangle.height ||
+        triangle.length + triangle.height <= triangle.width ||
+         triangle.width + triangle.height <= triangle.length) {
       return false;
     }
     // Calculate the squares of the sides
@@ -113,7 +115,9 @@ function isObtuseTriangle(triangle) {
     var widthSquared = Math.pow(triangle.width, 2);
     var heightSquared = Math.pow(triangle.height, 2);
     // Check if the sum of the squares of the two shorter sides is less than the square of the longest side
-    if (lengthSquared + widthSquared < heightSquared || lengthSquared + heightSquared < widthSquared || widthSquared + heightSquared < lengthSquared) {
+    if (lengthSquared + widthSquared < heightSquared || 
+        lengthSquared + heightSquared < widthSquared || 
+        widthSquared + heightSquared < lengthSquared) {
       console.log("This is an obtuse triangle");
     }
     else {
