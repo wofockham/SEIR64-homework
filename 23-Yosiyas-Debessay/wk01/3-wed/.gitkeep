@@ -55,19 +55,16 @@ const areaOfCirlce = function(numm){
 console.log(halfNum(9));
 
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
+//lame attempt at DrEvil
+const DrEvil = function (amount){
+    for (let i = 0; i  > 1000000; i++)
+        if (dollars === 1000000) {    
+    return amount + " dollars (pinky)";
+    }else {
+        return amount + "dollars";
+    }
+}
+console.log(DrEvil);
 
 
 
@@ -117,3 +114,18 @@ if (guessedLetter === true) {
 if (!guessedLetter.include('_')) {
     console.log(`Congratulations1 You have won the game. The word was ${wordLetters.join('')}.`);
 }
+
+
+//Maxofthreenumbers
+const  maxOfThreeNumbers = function(num1, num2, num3){
+    if (num1 > num2 && num1 > num3){
+        return num1;
+    } else if (num2 > num1 && num3){
+        return num2;
+    } else (num3 > num1 && num2)
+    return num3;
+}
+console.log(maxOfThreeNumbers(6, 4, 5));
+console.log(maxOfThreeNumbers(6, 54, 7));
+console.log(maxOfThreeNumbers(3, 1, 34));
+
