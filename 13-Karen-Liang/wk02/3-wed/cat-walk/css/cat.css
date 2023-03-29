@@ -1,0 +1,27 @@
+
+html {
+    background-image: url("https://media.tenor.com/MYZgsN2TDJAAAAAC/this-is.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+}
+
+.bottom {
+    max-width: 100%;
+    max-height: 100%;
+}
+.bottomImg {
+    margin: 875px 0 0 -31px;
+    width: 15%;
+}
+
+.bot-right {
+    margin: 620px 70px 406px 1767px;
+}
+
+body {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
