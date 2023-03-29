@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: url(https://i.imgur.com/oOMO9uF.jpeg) no-repeat;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 70px;
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(72, 1, 1);
+    text-transform: uppercase;
+}
+
+h1 {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    width: 80%;
+    font-size: 70px;;
+    font-weight: bold;
+    color: rgb(72, 1, 1);
+}
+h2 {
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    font-size: 20px;
+    color: rgb(72, 1, 1);
+    font-weight: bold;
+}
+.box {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+}
+
+.box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 16px;
+  line-height: 1.4;
+}
