@@ -35,6 +35,7 @@ nav ul li a {
     color: #fff;
     font-size: 25px;
     
+    
 }
 .row {
     display: flex;
@@ -95,11 +96,12 @@ button {
     transition: 0.5s;
 }
 .cardWord {
-    color: rgb(175, 226, 252);
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    text-shadow: #000000 0px 0px 20px;
 }
 h3 {
-    color: rgb(88, 168, 208);
+    color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 30px;
 }
@@ -107,5 +109,43 @@ h3 {
     transform: translateY(-10px);
 } 
 .card2:hover{
+    transform: translateY(-10px);
+}
+.card3 {
+    width: 400px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 13%;
+    background-image: url(https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/04/Knuth-Zapf_Painter-Stanford_2000_v2-1720x1251.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: -810px; 
+    transition: 0.5s;
+}
+.card3:hover{
+    transform: translateY(-10px);
+}
+.card4 {
+    width: 400px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 13%;
+    background-image: url(https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/04/Knuth-Zapf_Painter-Stanford_2000_v2-1720x1251.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: -1351px; 
+    transition: 0.5s;
+}
+.card4:hover{
     transform: translateY(-10px);
 }
