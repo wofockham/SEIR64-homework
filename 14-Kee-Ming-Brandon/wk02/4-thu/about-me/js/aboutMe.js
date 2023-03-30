@@ -2,14 +2,17 @@ $('body').css( 'font-family', "Arial, sans-serif" );
 
 $('#nickname').html("Brandon");
 
-$('#favorites').html("Photography, Plants and Badminton");
+$('#favorites').html("Red, Monstera and Badminton");
 
 $('#hometown').html("Selangor, Malaysia");
 
-$('li').each( function () {
-    $(this).addClass('listitem')
-            .css('color', 'red');   
-});
+// Dumb
+// $('li').each( function () {
+//     $(this).addClass('listitem')
+//             .css('color', 'darkblue');   
+// });
+$('li').addClass('listItem').css('color', 'darkblue');
+
 
 // $('<img>').attr('src', ../images/my-PushSubscriptionOptions.png).html();
 const $image = $('<img>');
