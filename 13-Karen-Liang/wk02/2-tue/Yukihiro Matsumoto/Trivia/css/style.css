@@ -69,18 +69,18 @@ li a:hover {
 .column {
     display: flex;
     flex-direction: row;
-    margin: 19px 0px 0px 100px;
+    margin: 4px -89px -5px 37px;
 }
 
 h2 {
     font-family: 'Poppins semibold', sans-serif;
     font-size: 35px;
-    margin: 0 0 -3px 118px
+    margin: 0 0 -3px 52px;
 }
 
 .rectangle {
     margin-bottom: -2px;
-    margin-left: 121px;
+    margin-left: 54px;
     display: inline-block;
     background-color: blue;
     width: 72px;
@@ -137,4 +137,25 @@ html {
     color: white;
     transition: 1s all;
 
+}
+
+hr {
+    width: 998px;
+    height: -31px;
+    margin: 32px 60px 26px 56px;
+    display: inline-block;
+}
+
+iframe {
+    display: inline-block;
+    border: 5px solid lightblue;
+    width: 480px;
+    height: 295px;
+}
+
+.videos {
+    column-count: 2;
+    width: 1017px;
+    height: 370px;
+    margin-left: 55px;
 }
