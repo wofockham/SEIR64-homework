@@ -167,6 +167,12 @@ const planTrip = function (minTemp, maxRain) {
 
     for (let i = 0; i < week.length; i++) {
     const day = week[i];
-    console.log(day);
+    if(day.temp >= minTemp && day.rain <= maxRain) {
+        day.push(day.name);
+    }
+    
+    }
+    if(days.length < 1) {
+        return 'No days suitable';
     }
 }
